@@ -1,0 +1,79 @@
+﻿@model Coretex.Models.Vehicle
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Vehicle</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="AddDate" class="control-label"></label>
+                <input asp-for="AddDate" class="form-control" />
+                <span asp-validation-for="AddDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VehicleName" class="control-label"></label>
+                <input asp-for="VehicleName" class="form-control" />
+                <span asp-validation-for="VehicleName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VehicleSpeed" class="control-label"></label>
+                <input asp-for="VehicleSpeed" class="form-control" />
+                <span asp-validation-for="VehicleSpeed" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VehicleLatitude" class="control-label"></label>
+                <input asp-for="VehicleLatitude" class="form-control" />
+                <span asp-validation-for="VehicleLatitude" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VehicleLongitude" class="control-label"></label>
+                <input asp-for="VehicleLongitude" class="form-control" />
+                <span asp-validation-for="VehicleLongitude" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VehicleTemperature" class="control-label"></label>
+                <input asp-for="VehicleTemperature" class="form-control" />
+                <span asp-validation-for="VehicleTemperature" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VehiclePressure" class="control-label"></label>
+                <input asp-for="VehiclePressure" class="form-control" />
+                <span asp-validation-for="VehiclePressure" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DriverName" class="control-label"></label>
+                <input asp-for="DriverName" class="form-control" />
+                <span asp-validation-for="DriverName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DriverAddress" class="control-label"></label>
+                <input asp-for="DriverAddress" class="form-control" />
+                <span asp-validation-for="DriverAddress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DriverLicense" class="control-label"></label>
+                <input asp-for="DriverLicense" class="form-control" />
+                <span asp-validation-for="DriverLicense" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

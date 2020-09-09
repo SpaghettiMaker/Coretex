@@ -9,6 +9,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
+using Coretex.Data;
+using Microsoft.EntityFrameworkCore;
+
 namespace Coretex
 {
     public class Startup
@@ -24,6 +27,9 @@ namespace Coretex
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            services.AddDbContext<CoretexContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("CoretexContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
